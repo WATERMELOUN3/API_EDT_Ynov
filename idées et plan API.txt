@@ -1,0 +1,42 @@
+EDT
+
+BDD:
+    [CLASSES]
+    Matière
+        - Nom*
+        - ECTS
+        - Prof référent°
+    Cours
+        - ID*
+        - Heure début
+        - Heure fin
+        - Matière°
+        - Prof°
+    User
+        - Username*
+        - Password
+        - Prenom
+        - Nom
+        - EstProf
+    
+    [CLASSES EQUIVALENCE]
+    Assister
+        - Id*
+        - IdCours°
+        - Student°
+
+API:
+    /
+        -> Affiche HTML simple pour dire que c'est une API
+    /eleve
+        /
+
+QUESTIONS:
+    * Classes equivalences SQLite
+        -> Oui comme j'ai fait avec des foreign keys
+    * HTML ? Vrai pages Web ?
+        -> Non uniquement API qui vomis du Json ou just straight up des octets
+    * Documentation API ?
+        -> OUI
+    * Scripts de test ou scripts utilisateur
+        -> Tests unitaires si possible
