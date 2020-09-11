@@ -1,6 +1,14 @@
 from flask_login import UserMixin
 from . import db
 
+# Classe d'équivalence assiste
+
+assiste_table = db.Table("assiste", db.Model.metadata,
+                         db.Column("id", db.Integer, primary_key=True),
+                         db.Column("idCour", db.Integer,
+                                   db.ForeignKey("cour.id")),
+                         db.Column("idStudent", db.Integer, db.ForeignKey("user.id")))
+
 # Classe utilisateur
 
 
@@ -13,6 +21,7 @@ class User(UserMixin, db.Model):
     prenom = db.Column(db.String(100))
     nom = db.Column(db.String(100))
     prof = db.Column(db.Boolean, nullable=False)
+    cours = db.relationship("Cour", secondary=assiste_table, backref="eleves")
 
 # Classe matiere
 
@@ -30,17 +39,15 @@ class Matiere(db.Model):
 class Cour(db.Model):
     id = db.Column(db.Integer, primary_key=True, unique=True,
                    autoincrement=True, nullable=False)
-    heure_debut = db.Column(db.String, nullable=False)
-    heure_fin = db.Column(db.String, nullable=False)
+    heure_debut = db.Column(db.DateTime, nullable=False)
+    heure_fin = db.Column(db.DateTime, nullable=False)
     matiere = db.Column(db.Integer, db.ForeignKey(
         "matiere.id"), nullable=False)
     prof = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
-# Classe d'équivalence assiste
 
-
-class Assiste(db.Model):
-    id = db.Column(db.Integer, primary_key=True, unique=True,
-                   autoincrement=True, nullable=False)
-    idCour = db.Column(db.Integer, db.ForeignKey("cour.id"), nullable=False)
-    idStudent = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+# class Assiste(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, unique=True,
+#                    autoincrement=True, nullable=False)
+#     idCour = db.Column(db.Integer, db.ForeignKey("cour.id"), nullable=False)
+#     idStudent = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)

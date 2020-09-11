@@ -1,7 +1,7 @@
 from flask import Blueprint, redirect, url_for, flash
 from .models import User
 from . import db
-from flask_login import login_user, login_required, current_user
+from flask_login import login_user, login_required, logout_user
 from flask_sqlalchemy import request
 
 # auth blueprint, contains all the authentications routes
@@ -13,7 +13,7 @@ auth = Blueprint('auth', __name__)
 #
 
 
-@auth.route('/login', methods=['GET', 'PUT', 'PATCH'])
+@auth.route('/login', methods=['GET', 'PUT', 'PATCH', 'DELETE'])
 def login():
     return 'Use POST request to login...'
 
@@ -42,7 +42,7 @@ def login_post():
     return "Successfully logged in !"  # redirect(url_for('main.profile'))
 
 
-@auth.route('/signup', methods=['GET', 'PUT', 'PATCH'])
+@auth.route('/signup', methods=['GET', 'PUT', 'PATCH', 'DELETE'])
 def signup():
     return 'Use POST request to signup...'
 

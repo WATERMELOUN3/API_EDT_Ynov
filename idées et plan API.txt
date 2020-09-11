@@ -28,8 +28,21 @@ BDD:
 API:
     /
         -> Affiche HTML simple pour dire que c'est une API
-    /eleve
-        /
+    /cours
+        GET -> Accède aux cours auquels l'élève est inscrit
+            Arguments: datedebut, datefin, matière
+        POST -> S'inscrit à un cours
+            Body: idcours*
+        DELETE -> Se désinscrit à un cours
+    /matiere
+        GET -> Accède aux différentes matières
+            Arguments: idprof
+        POST -> Créé une matière
+            Body: nom*, idprof*, ects*
+        PUT -> Met à jour une matière
+            Body: id*, nom, idprof, ects
+        DELETE -> Supprime une matière 
+
 
 QUESTIONS:
     * Classes equivalences SQLite
