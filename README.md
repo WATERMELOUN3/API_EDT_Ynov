@@ -1,6 +1,8 @@
 # API_EDT_Ynov
 *Par Alexis GELIN--ANDRIEU*  
-API faite en Python 3 avec Flask permettant l'accès à un système d'emploi du temps
+API faite en Python 3 avec Flask permettant l'accès à un système d'emploi du temps  
+  
+**Dépendances:** flask, flask-login, flask-sqlalchemy
 
 
 ## How to use:  
