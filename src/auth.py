@@ -36,7 +36,7 @@ def login_post():
         return "Incorrect credentials"  # redirect(url_for('auth.login'))
 
     # if the above check passes, then we know the user has the right credentials
-    
+
     login_user(user, remember=remember)
     print("User", username, "logged in !")
     return "Successfully logged in !"  # redirect(url_for('main.profile'))

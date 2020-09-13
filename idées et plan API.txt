@@ -31,17 +31,30 @@ API:
     /cours
         GET -> Accède aux cours auquels l'élève est inscrit
             Arguments: datedebut, datefin, matière
-        POST -> S'inscrit à un cours
-            Body: idcours*
+        PUT -> S'inscrit à un cours
+            Body: idCour*
+        POST -> Créé un cours (pour prof)
+            Arguments: idMatiere*, idProf*, heureDebut*, heureFin*
         DELETE -> Se désinscrit à un cours
+            Arguments: idCour*, idStudent (en tant que prof pour desinscrire un eleve)
     /matiere
         GET -> Accède aux différentes matières
-            Arguments: idprof
+            Arguments: idProf
         POST -> Créé une matière
-            Body: nom*, idprof*, ects*
-        PUT -> Met à jour une matière
-            Body: id*, nom, idprof, ects
-        DELETE -> Supprime une matière 
+            Body: nom*, idProf*, ects*
+        PATCH -> Met à jour une matière
+            Body: id*, nom, idProf, ects
+        DELETE -> Supprime une matière
+            Arguments: id*
+    /prof/user
+        GET -> Affiche les info d'un utilisateur (sauf mdp)
+            Arguments: id*
+        POST -> Créé un utilisateur
+            Arguments: username*, password* (sha256 hash), prenom, nom, prof
+        DELETE -> Supprime un utilisateur
+            Arguments: id*
+        PUT -> Met à jour un utilisateur
+            Arguments: id*, username, password, prenom, nom, prof
 
 
 QUESTIONS:

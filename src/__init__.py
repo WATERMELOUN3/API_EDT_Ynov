@@ -14,7 +14,8 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
 
-    app.config['SECRET_KEY'] = 'b21b9e3d501093049b4f80032719962b41281700fe1a0829' # Just a urandom(24).hex()
+    # Just a urandom(24).hex()
+    app.config['SECRET_KEY'] = 'b21b9e3d501093049b4f80032719962b41281700fe1a0829'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -39,7 +40,6 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    @app.route('/error')
     @login_manager.unauthorized_handler
     def unauthorized():
         return redirect(url_for('main.error'))
