@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "d958e915-4972-40cf-8a32-5ac7edfe44fa",
+		"name": "API_Ynov_EDT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Matiere GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/matiere",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"matiere"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Matiere POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nom",
+							"value": "Informatique",
+							"type": "text"
+						},
+						{
+							"key": "idProf",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "ects",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/matiere",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"matiere"
+					],
+					"query": [
+						{
+							"key": "nom",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "ects",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "idProf",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cours DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idCour",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/cours",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cours POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idMatiere",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "idProf",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "heureDebut",
+							"value": "2021-05-30 10:00:00",
+							"type": "text"
+						},
+						{
+							"key": "heureFin",
+							"value": "2021-05-30 14:00:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/cours",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cours PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idCour",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/cours",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cours GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/cours",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"cours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/logout",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "obabo",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "f407b375750ee5074e6a0d609b81b412a79c03412efaacd2f0be20164debe73a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "remember",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
