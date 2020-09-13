@@ -2,7 +2,8 @@
 *Par Alexis GELIN--ANDRIEU*  
 API faite en Python 3 avec Flask permettant l'accès à un système d'emploi du temps  
   
-**Dépendances:** flask, flask-login, flask-sqlalchemy
+**Dépendances:** flask, flask-login, flask-sqlalchemy  
+*Une collection de requêtes Postman est disponible dans la racine du projet*
 
 
 ## How to use:  
